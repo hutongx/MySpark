@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.my_spark</groupId>
+        <artifactId>MySpark</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>test6</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <scala.version>2.12.17</scala.version>
+        <scala.compat.version>2.12</scala.compat.version>
+        <spark.version>3.5.0</spark.version>
+        <typesafe.config.version>1.4.1</typesafe.config.version>
+        <log4j.version>2.17.2</log4j.version>
+        <scopt.version>4.1.0</scopt.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_${scala.compat.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_${scala.compat.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive_${scala.compat.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>${typesafe.config.version}</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.apache.logging.log4j</groupId>-->
+<!--            <artifactId>log4j-api</artifactId>-->
+<!--            <version>${log4j.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.logging.log4j</groupId>-->
+<!--            <artifactId>log4j-core</artifactId>-->
+<!--            <version>${log4j.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.logging.log4j</groupId>-->
+<!--            <artifactId>log4j-slf4j-impl</artifactId>-->
+<!--            <version>${log4j.version}</version>-->
+<!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/com.github.scopt/scopt -->
+        <dependency>
+            <groupId>com.github.scopt</groupId>
+            <artifactId>scopt_2.12</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+
+        <!-- Add other dependencies as needed:
+             - Connectors for specific data sources (Kafka, JDBC, Cassandra, etc.)
+             - Delta Lake (io.delta:delta-core_2.12:your_delta_version)
+        -->
+    </dependencies>
+
+</project>

@@ -1,0 +1,46 @@
+your-spark-dw-etl-project/
+├── pom.xml                   # Maven project file (defined above)
+├── .gitignore                # Git ignore file
+├── data/                     # (Optional) Sample data for local testing
+│   ├── ods/
+│   │   └── source_table_1/
+│   │       └── data.parquet
+│   └── dwd/
+│       └── cleaned_table_1/
+│           └── data.parquet
+├── src/
+│   ├── main/
+│   │   ├── scala/
+│   │   │   └── com/yourcompany/dw/  # Your base package
+│   │   │       ├── MainApp.scala         # Main entry point of the application
+│   │   │       ├── config/
+│   │   │       │   ├── AppConfig.scala   # Loads and provides application configuration
+│   │   │       │   └── CliArgs.scala     # Case class for command-line arguments (used with Scopt)
+│   │   │       ├── jobs/                 # ETL job definitions
+│   │   │       │   ├── OdsToDwdJob.scala
+│   │   │       │   └── DwdToDwsJob.scala
+│   │   │       ├── utils/                # Utility classes
+│   │   │       │   ├── SparkSessionUtil.scala
+│   │   │       │   └── FileUtil.scala    # (Optional) Utility for reading SQL files etc.
+│   │   │       └── models/               # (Optional) Case classes for schema definitions if needed
+│   │   │           └── User.scala
+│   │   └── resources/
+│   │       ├── application.conf      # Main configuration file (HOCON format)
+│   │       ├── log4j2.properties     # Log4j2 configuration
+│   │       ├── sql/                  # Directory for SQL query files
+│   │       │   ├── ods_to_dwd/
+│   │       │   │   └── transform_users.sql
+│   │       │   │   └── transform_orders.sql
+│   │       │   └── dwd_to_dws/
+│   │       │       └── aggregate_daily_sales.sql
+│   │       │       └── create_user_profile_summary.sql
+│   └── test/
+│       ├── scala/
+│       │   └── com/yourcompany/dw/   # Unit and integration tests
+│       │       └── jobs/
+│       │           └── OdsToDwdJobSpec.scala
+│       └── resources/
+│           └── test_application.conf # Configuration for tests
+└── README.md                 # Project documentation
+
+This structure separates concerns, making the project easier to navigate, maintain, and test.
